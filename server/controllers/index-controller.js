@@ -8,7 +8,7 @@ export const getItems = async (req, res) => {
   const { query } = req.params;
   try {
     const apiRes = await axios.get(
-      `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+      `https://api.edamam.com/api/recipes/v2?type=public&beta=true&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
     const data = apiRes.data;
     res.status(200).json(data);
