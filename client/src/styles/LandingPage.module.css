@@ -30,7 +30,7 @@
 .buttonsCTA {
   display: flex;
   text-align: center;
-  margin-top: 150px;
+  margin: 150px 0;
   font-size: 1.5rem;
   cursor: pointer;
 }

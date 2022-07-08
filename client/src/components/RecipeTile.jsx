@@ -14,7 +14,7 @@ const RecipeTile = ({ item }) => {
   };
   return (
     <main key={uniqueId} className={styles.tileRecipe}>
-      <Link to={`recipe/${parseUri(item.recipe.uri)}`}>
+      <Link to={`/recipes/${parseUri(item.recipe.uri)}`}>
         {console.log('parsedUri', parseUri(item.recipe.uri))}
         <img src={item.recipe.image}></img>
         <div className={styles.text}> {item.recipe.label}</div>

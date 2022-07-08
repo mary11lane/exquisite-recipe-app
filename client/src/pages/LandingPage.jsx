@@ -24,7 +24,9 @@ const LandingPage = () => {
             <span className={styles.signup}>Signup</span>
           </Link>
         </div>
+
         <Footer />
+        <div id="edamam-badge" data-color="black"></div>
       </section>
     </main>
   );

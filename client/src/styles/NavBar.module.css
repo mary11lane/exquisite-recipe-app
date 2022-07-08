@@ -1,0 +1,26 @@
+.containerNav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.logo {
+  font-size: 3rem;
+  font-family: 'Allura', cursive;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav div {
+  margin: 0 30px;
+  font-weight: 600;
+}
+
+.logo,
+.nav {
+  margin: 20px 50px;
+  cursor: pointer;
+}

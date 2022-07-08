@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import styles from '../styles/RecipeListPage.module.css';
 import RecipeTile from '../components/RecipeTile.jsx';
+import NavBar from '../components/NavBar';
 import Footer from '../components/Footer.jsx';
 
 const RecipeListPage = () => {
@@ -17,7 +18,7 @@ const RecipeListPage = () => {
   }, [query]);
 
   const getRecipes = async () => {
-    const response = await axios.get(`http://localhost:5000/api/${query}`);
+    const response = await axios.get(`http://localhost:5000/recipes/${query}`);
     setRecipes(response.data.hits);
     setResponseVar(response.data._links.next);
     setDataFetched(true);
@@ -30,6 +31,7 @@ const RecipeListPage = () => {
 
   return (
     <main className={styles.container}>
+      <NavBar />
       <form onSubmit={getSearch} className={styles.form}>
         <input
           className={styles.inputForm}

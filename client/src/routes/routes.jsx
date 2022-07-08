@@ -17,7 +17,7 @@ const RoutesComponent = () => {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/recipes" element={<RecipeListPage />} />
-        <Route path="/recipes/recipe/:id" element={<RecipePage />} />
+        <Route path="/recipes/:id" element={<RecipePage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
