@@ -1,7 +1,33 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import styles from '../styles/LandingPage.module.css';
+import Logo from '../components/Logo';
+import Footer from '../components/Footer';
 
 const LandingPage = () => {
-  return <div>LandingPage</div>;
+  return (
+    <main className={styles.container}>
+      <section className={styles.containerImage}>
+        <img
+          className={styles.imageLanding}
+          src="src/assets/images/exquisite-landing-img.jpg"
+        />
+      </section>
+      <section className={styles.containerLogoCTA}>
+        <Logo />
+        <div className={styles.buttonsCTA}>
+          <Link to="/login">
+            <span className={styles.login}>Login</span>
+          </Link>
+          <Link to="/signup">
+            <span className={styles.signup}>Signup</span>
+          </Link>
+        </div>
+        <Footer />
+      </section>
+    </main>
+  );
 };
 
 export default LandingPage;

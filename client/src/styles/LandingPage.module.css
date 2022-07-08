@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.containerImage {
+  width: 60vw;
+  height: 100vh;
+}
+
+.imageLanding {
+  width: 100%;
+  height: 100vh;
+}
+
+.containerLogoCTA {
+  position: relative;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 80px;
+}
+
+.buttonsCTA {
+  display: flex;
+  text-align: center;
+  margin-top: 150px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.login,
+.signup {
+  padding: 5px 20px;
+}
+
+.signup {
+  background-color: #d7b957;
+}

@@ -9,6 +9,7 @@ specifiers:
   react-dom: ^18.0.0
   react-router-dom: ^6.3.0
   react-toastify: ^9.0.5
+  uuid: ^8.3.2
   vite: ^2.9.9
 
 dependencies:
@@ -17,6 +18,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-router-dom: 6.3.0_react-dom@18.2.0+react@18.2.0
   react-toastify: 9.0.5_react-dom@18.2.0+react@18.2.0
+  uuid: 8.3.2
 
 devDependencies:
   '@types/react': 18.0.15
@@ -952,6 +954,11 @@ packages:
       escalade: 3.1.1
       picocolors: 1.0.0
     dev: true
+
+  /uuid/8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
+    dev: false
 
   /vite/2.9.13:
     resolution: {integrity: sha512-AsOBAaT0AD7Mhe8DuK+/kE4aWYFMx/i0ZNi98hJclxb4e0OhQcZYUrvLjIaQ8e59Ui7txcvKMiJC1yftqpQoDw==}
