@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 const RecipePage = () => {
   const { id } = useParams();
   const [recipe, setRecipe] = useState({});
+  const [dataFetched, setDataFetched] = useState(false);
 
   useEffect(() => {
     getRecipe();
@@ -17,27 +18,31 @@ const RecipePage = () => {
     const idUri = encodeURIComponent(id);
     console.log('single uri', idUri);
     console.log('idparams', id);
-    const response = await axios.get(
-      `http://localhost:5000/api/single/${id}`
-      //`https://api.edamam.com/api/recipes/v2/${id}?type=public&beta=true&app_id=5185c6f2&app_key=431eb98528387457047665d1164e5527&field=uri&field=label&field=image&field=healthLabels&field=ingredientLines&field=co2EmissionsClass`
-      // 'https://api.edamam.com/api/recipes/v2/http%253A%252F%252Fwww.edamam.com%252Fontologies%252Fedamam.owl%2523recipe_b79327d05b8e5b838ad6cfd9576b30b6?type=public&beta=true&app_id=5185c6f2&app_key=431eb98528387457047665d1164e5527&field=uri&field=label&field=image&field=healthLabels&field=ingredientLines&field=co2EmissionsClass'
-    );
+    const response = await axios.get(`http://localhost:5000/api/single/${id}`);
     setRecipe(response.data.recipe);
+    setDataFetched(true);
     console.log(response.data);
   };
   return (
     <main className={styles.container}>
-      <img src={recipe.image} className={styles.image}></img>
-      <section className={styles.containerRecipe}>
-        <div className={styles.label}>{recipe.label}</div>
+      {!dataFetched ? (
+        <div className={styles.textLoader}>Fetching your recipe...</div>
+      ) : (
+        <div className={styles.containerSub}>
+          <img src={recipe.image} className={styles.image}></img>
+          <section className={styles.containerRecipe}>
+            <div className={styles.label}>{recipe.label}</div>
 
-        <section className={styles.containerDetails}>
-          <div>ingredients: {recipe.ingredientLines}</div>
-          <div>health labels: {recipe.healthLabels}</div>
-          <div>c02e: {recipe.co2EmissionsClass}</div>
-        </section>
-      </section>
-      <Footer />
+            <section className={styles.containerDetails}>
+              <div>ingredients: {recipe.ingredientLines}</div>
+              <div>health labels: {recipe.healthLabels}</div>
+              <div>c02e: {recipe.co2EmissionsClass}</div>
+            </section>
+          </section>
+
+          <Footer />
+        </div>
+      )}
     </main>
   );
 };

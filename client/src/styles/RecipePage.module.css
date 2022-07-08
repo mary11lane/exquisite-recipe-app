@@ -1,12 +1,16 @@
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.containerSub {
   width: 100vw;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  position: relative;
-  padding-bottom: 80px;
 }
 
 .containerRecipe {
@@ -22,6 +26,12 @@
 .label {
   font-weight: 600;
   margin: 10px 20px;
+}
+.textLoader {
+  color: #fff;
+  margin: 20px;
+  font-weight: 700;
+  text-align: center;
 }
 
 .containerDetails {

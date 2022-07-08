@@ -21,6 +21,12 @@
   padding: 7px;
 }
 
+.textLoader {
+  color: #fff;
+  margin: 20px;
+  font-weight: 700;
+}
+
 .recipeTiles {
   display: flex;
   flex-wrap: wrap;
