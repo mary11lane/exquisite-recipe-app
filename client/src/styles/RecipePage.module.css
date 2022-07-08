@@ -1,0 +1,36 @@
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.containerRecipe {
+  width: 400px;
+  height: 500px;
+  background-color: #d7b957;
+}
+
+.image {
+  width: 500px;
+}
+
+.label {
+  font-weight: 600;
+  margin: 10px 20px;
+}
+
+.containerDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin: 10px 20px;
+}
+.containerDetails div {
+  margin-bottom: 10px;
+}

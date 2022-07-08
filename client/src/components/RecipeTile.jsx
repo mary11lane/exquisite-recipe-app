@@ -6,15 +6,19 @@ import styles from '../styles/RecipeTile.module.css';
 
 const RecipeTile = ({ item }) => {
   const uniqueId = uuidv4();
+  const parseUri = (uri) => {
+    const prefix = '#recipe_';
+    const index = uri.indexOf(prefix);
+    let recipeId = uri.substr(index).substring(prefix.length);
+    return recipeId;
+  };
   return (
     <main key={uniqueId} className={styles.tileRecipe}>
-      <Link to={`recipe/${encodeURIComponent(item.recipe.uri)}`}>
+      <Link to={`recipe/${parseUri(item.recipe.uri)}`}>
+        {console.log('parsedUri', parseUri(item.recipe.uri))}
         <img src={item.recipe.image}></img>
-        <div>label: {item.recipe.label}</div>
-        {/* <div className={styles.healthLabels}>
-          health labels: {item.recipe.healthLabels.join(', ')}
-        </div>
-        <div>C02e: {item.recipe.co2EmissionsClass}</div> */}
+        <div className={styles.text}> {item.recipe.label}</div>
+        <div className={styles.text}>C02e: {item.recipe.co2EmissionsClass}</div>
       </Link>
     </main>
   );
