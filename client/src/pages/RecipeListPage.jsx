@@ -18,7 +18,7 @@ const RecipeListPage = () => {
   }, [query]);
 
   const getRecipes = async () => {
-    const response = await axios.get(`http://localhost:5000/recipes/${query}`);
+    const response = await axios.get(`http://localhost:5000/api/${query}`);
     setRecipes(response.data.hits);
     setResponseVar(response.data._links.next);
     setDataFetched(true);

@@ -1,24 +1,43 @@
 import express from 'express';
 import path from 'path';
+import 'dotenv/config';
 
 import __dirname from './dirname.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import logger from 'morgan';
 
+import connectDb from './connectDb.js';
 import usersRouter from './routes/users.js';
 import indexRouter from './routes/index.js';
+import authRouter from './routes/authRoutes.js';
 
 const app = express();
 
+const DB_USERNAME = process.env.DB_USERNAME;
+const DB_PASSWORD = process.env.DB_PASSWORD;
+console.log('connection str from app.js', DB_USERNAME, DB_PASSWORD);
+
+connectDb(
+  `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.mp34x.mongodb.net/`,
+  'exquisite'
+);
+
 app.use(logger('dev'));
-app.use(cors());
+app.use(
+  cors({
+    origin: ['http://localhost:3000'],
+    method: ['GET', 'POST'],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/recipes', indexRouter);
+app.use('/', authRouter);
+app.use('/api', indexRouter);
 app.use('/users', usersRouter);
 
 app.use(function (req, res, next) {

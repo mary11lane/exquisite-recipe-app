@@ -29,3 +29,8 @@
   cursor: pointer;
   background-color: #d7b957;
 }
+.login {
+  color: #d7b957;
+  font-weight: 600;
+  text-align: center;
+}

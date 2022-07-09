@@ -19,9 +19,7 @@ const RecipePage = () => {
     const idUri = encodeURIComponent(id);
     console.log('single uri', idUri);
     console.log('idparams', id);
-    const response = await axios.get(
-      `http://localhost:5000/recipes/recipe/${id}`
-    );
+    const response = await axios.get(`http://localhost:5000/api/recipes/${id}`);
     setRecipe(response.data.recipe);
     setDataFetched(true);
     console.log(response.data);

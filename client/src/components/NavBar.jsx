@@ -1,8 +1,13 @@
 import React from 'react';
 import styles from '../styles/NavBar.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
+  const navigate = useNavigate();
+  const logout = () => {
+    navigate('/login');
+  };
+
   return (
     <main className={styles.containerNav}>
       <Link to="/">
@@ -13,7 +18,7 @@ const NavBar = () => {
           <div>Profile</div>
         </Link>
 
-        <div>Logout</div>
+        <div onClick={logout}>Logout</div>
       </section>
     </main>
   );

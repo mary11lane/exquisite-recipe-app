@@ -21,12 +21,12 @@ export const getRecipe = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const apiResSingle = await axios.get(
+    const apiRes = await axios.get(
       `https://api.edamam.com/api/recipes/v2/${id}?type=public&beta=true&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
-    console.log(apiResSingle);
-    const dataSingle = apiResSingle.data;
-    res.status(200).json(dataSingle);
+    console.log(apiRes);
+    const data = apiRes.data;
+    res.status(200).json(data);
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: err.message });
