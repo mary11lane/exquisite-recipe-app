@@ -26,7 +26,7 @@ const LandingPage = () => {
         </div>
 
         <Footer />
-        <div id="edamam-badge" data-color="black"></div>
+        <div id="edamam-badge" data-color="transparent"></div>
       </section>
     </main>
   );

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getRecipes, getRecipe } from '../controllers/index-controller.js';
+import { getRecipes, getRecipe } from '../controllers/apiControllers.js';
 
 const router = Router();
 router.get('/:recipes', getRecipes);

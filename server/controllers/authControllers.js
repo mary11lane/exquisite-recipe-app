@@ -1,4 +1,4 @@
-import Users from '../models/UserModel.js';
+import User from '../models/UserModel.js';
 import jwt from 'jsonwebtoken';
 
 const createToken = (id) => {
@@ -32,7 +32,7 @@ const errorHandler = (err) => {
 export const signup = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const user = await Users.create({ email, password });
+    const user = await User.create({ email, password });
     const token = createToken(user._id);
 
     res.cookie('jwt', token, {
@@ -52,7 +52,7 @@ export const signup = async (req, res) => {
 export const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
-    const user = await Users.login(email, password);
+    const user = await User.login(email, password);
     const token = createToken(user._id);
 
     res.cookie('jwt', token, {

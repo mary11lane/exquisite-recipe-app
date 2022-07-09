@@ -9,7 +9,7 @@ const ErrorPage = () => {
     <main className={styles.container}>
       <img
         className={styles.imgDisplay}
-        src="src/assets/images/error-page-img.svg"
+        src="http://localhost:3000/src/assets/images/error-page-img.svg"
       ></img>
       <div className={styles.text}>
         The page you're looking for does not exist

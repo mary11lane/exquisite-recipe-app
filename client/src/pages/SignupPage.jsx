@@ -9,12 +9,11 @@ import Footer from '../components/Footer';
 const SignupPage = () => {
   const navigate = useNavigate();
   const [values, setValues] = useState({
-    username: '',
     email: '',
     password: '',
   });
 
-  const { username, email, password } = values;
+  const { email, password } = values;
 
   const changeHandler = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -59,14 +58,6 @@ const SignupPage = () => {
       <ToastContainer />
       <div className={styles.text}>SIGNUP</div>
       <form className={styles.form} onSubmit={submitHandler}>
-        <input
-          id="username"
-          name="username"
-          type="text"
-          placeholder="username"
-          value={username}
-          onChange={changeHandler}
-        ></input>
         <input
           id="email"
           name="email"

@@ -1,15 +1,13 @@
 import express from 'express';
 import path from 'path';
 import 'dotenv/config';
-
 import __dirname from './dirname.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import logger from 'morgan';
 
 import connectDb from './connectDb.js';
-import usersRouter from './routes/users.js';
-import indexRouter from './routes/index.js';
+import indexRouter from './routes/apiRoutes.js';
 import authRouter from './routes/authRoutes.js';
 
 const app = express();
@@ -38,7 +36,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', authRouter);
 app.use('/api', indexRouter);
-app.use('/users', usersRouter);
 
 app.use(function (req, res, next) {
   res
