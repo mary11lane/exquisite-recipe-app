@@ -1,7 +1,16 @@
-.container {
+.container,
+.containerSub,
+.containerDetails {
   display: flex;
+}
+
+.container,
+.containerSub {
   align-items: center;
   justify-content: center;
+}
+
+.container {
   min-height: 100vh;
   padding-bottom: 80px;
   position: relative;
@@ -9,9 +18,6 @@
 
 .containerSub {
   width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .containerRecipe {
@@ -26,6 +32,10 @@
 
 .label {
   font-weight: 600;
+}
+
+.label,
+.containerDetails {
   margin: 10px 20px;
 }
 .textLoader {
@@ -36,11 +46,9 @@
 }
 
 .containerDetails {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  margin: 10px 20px;
 }
 .containerDetails div {
   margin-bottom: 10px;

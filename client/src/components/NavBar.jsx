@@ -37,13 +37,10 @@ const NavBar = () => {
 
   return (
     <main className={styles.containerNav}>
-      <Link to="/">
+      <Link to="/recipes">
         <section className={styles.logo}>Exquisite</section>
       </Link>
       <section className={styles.nav}>
-        <Link to="/recipes">
-          <div>Recipes</div>
-        </Link>
         <Link to="/profile">
           <div>Profile</div>
         </Link>

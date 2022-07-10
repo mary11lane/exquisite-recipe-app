@@ -1,6 +1,10 @@
+.container,
+.recipeTiles {
+  display: flex;
+}
+
 .container {
   min-height: 100vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
@@ -24,14 +28,13 @@
 }
 
 .recipeTiles {
-  display: flex;
   flex-wrap: wrap;
   margin: 20px auto;
   max-width: 1500px;
 }
 
 .pagination {
-  width: 15%;
+  width: 10%;
   font-weight: 700;
   color: #fff;
   position: absolute;

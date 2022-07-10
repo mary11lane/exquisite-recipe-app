@@ -17,13 +17,16 @@
 .form input {
   width: 300px;
   display: block;
-  margin: 15px;
   padding: 10px;
+}
+
+.form input,
+.form button {
+  margin: 15px;
 }
 
 .form button {
   width: 300px;
-  margin: 15px;
   padding: 5px 10px;
   border-radius: 10px;
   cursor: pointer;

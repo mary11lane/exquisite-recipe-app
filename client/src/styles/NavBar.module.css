@@ -1,6 +1,10 @@
+.containerNav,
+.nav {
+  display: flex;
+}
+
 .containerNav {
   width: 100%;
-  display: flex;
   justify-content: space-between;
   color: #fff;
 }
@@ -11,8 +15,7 @@
 }
 
 .nav {
-  width: 25%;
-  display: flex;
+  width: 15%;
   align-items: center;
   justify-items: center;
 }

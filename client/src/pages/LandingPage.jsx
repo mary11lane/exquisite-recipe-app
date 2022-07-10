@@ -14,9 +14,9 @@ const LandingPage = () => {
           src="src/assets/images/exquisite-landing-img.jpg"
         />
       </section>
-      <section className={styles.containerLogoCTA}>
+      <section className={styles.containerLogoButtons}>
         <Logo />
-        <div className={styles.buttonsCTA}>
+        <div className={styles.buttons}>
           <Link to="/login">
             <span className={styles.login}>Login</span>
           </Link>

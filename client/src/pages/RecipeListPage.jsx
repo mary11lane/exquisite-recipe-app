@@ -9,10 +9,9 @@ import Footer from '../components/Footer.jsx';
 const RecipeListPage = () => {
   const [recipes, setRecipes] = useState([]);
   const [input, setInput] = useState('');
-  const [query, setQuery] = useState('chicken');
+  const [query, setQuery] = useState('pizza');
   const [dataFetched, setDataFetched] = useState(false);
   const [nextpage, setNextpage] = useState({});
-  const [prevpage, setPrevpage] = useState({});
 
   useEffect(() => {
     getRecipes();
@@ -23,33 +22,22 @@ const RecipeListPage = () => {
     setRecipes(data.hits);
     setDataFetched(true);
     setNextpage(data._links.next);
-    console.log('recipes', recipes);
-    console.log('data', data);
   };
 
   const changeHandler = (e) => {
     setInput(e.target.value);
-    console.log('onchange', input);
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
     setQuery(input);
-    console.log('input', input);
+    setInput('');
   };
 
   const nextpageHandler = async () => {
     const { data } = await axios.get(nextpage.href);
     setRecipes(data.hits);
     setNextpage(data._links.next);
-    setPrevpage(nextpage.href);
-    console.log('prevpage', prevpage);
-    setDataFetched(true);
-  };
-
-  const prevpageHandler = async () => {
-    const { data } = await axios.get(prevpage);
-    setRecipes(data.hits);
     setDataFetched(true);
   };
 
@@ -60,6 +48,7 @@ const RecipeListPage = () => {
         <input
           className={styles.inputForm}
           type="text"
+          placeholder="pizza"
           value={input}
           onChange={changeHandler}
         />
@@ -79,10 +68,6 @@ const RecipeListPage = () => {
         </section>
       )}
       <section className={styles.pagination}>
-        <span className={styles.buttonPage} onClick={prevpageHandler}>
-          &#8592; Previous
-        </span>
-        &#124;
         <span className={styles.buttonPage} onClick={nextpageHandler}>
           Next &#8594;
         </span>
