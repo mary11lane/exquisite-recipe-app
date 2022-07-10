@@ -3,10 +3,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*justify-content: center; */
   position: relative;
   padding-bottom: 80px;
   margin: 10px;
+  color: #fff;
 }
 
 .inputForm {
@@ -19,7 +19,6 @@
 }
 
 .textLoader {
-  color: #fff;
   margin: 20px;
   font-weight: 700;
 }
@@ -29,4 +28,10 @@
   flex-wrap: wrap;
   margin: 20px auto;
   max-width: 1500px;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 50px;
+  cursor: pointer;
 }

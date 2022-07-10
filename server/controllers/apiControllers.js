@@ -5,13 +5,13 @@ const APP_ID = process.env.APP_ID;
 const APP_KEY = process.env.APP_KEY;
 
 export const getRecipes = async (req, res) => {
-  const { query } = req.params;
+  const { recipes } = req.params;
   try {
-    const apiRes = await axios.get(
-      `https://api.edamam.com/api/recipes/v2?type=public&beta=true&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+    const { data } = await axios.get(
+      `https://api.edamam.com/api/recipes/v2?type=public&beta=true&q=${recipes}&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
-    const data = apiRes.data;
     res.status(200).json(data);
+    console.log(data);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -21,14 +21,11 @@ export const getRecipe = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const apiRes = await axios.get(
+    const { data } = await axios.get(
       `https://api.edamam.com/api/recipes/v2/${id}?type=public&beta=true&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
-    console.log(apiRes);
-    const data = apiRes.data;
-    res.status(200).json(data);
+    res.status(200).json(data.recipe);
   } catch (err) {
-    console.log(err);
     res.status(500).json({ message: err.message });
   }
 };

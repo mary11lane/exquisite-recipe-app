@@ -16,13 +16,9 @@ const RecipePage = () => {
   }, []);
 
   const getRecipe = async () => {
-    const idUri = encodeURIComponent(id);
-    console.log('single uri', idUri);
-    console.log('idparams', id);
-    const response = await axios.get(`http://localhost:5000/api/recipes/${id}`);
-    setRecipe(response.data.recipe);
+    const { data } = await axios.get(`http://localhost:5000/api/recipes/${id}`);
+    setRecipe(data);
     setDataFetched(true);
-    console.log(response.data);
   };
   return (
     <main>
@@ -38,7 +34,7 @@ const RecipePage = () => {
 
               <section className={styles.containerDetails}>
                 <div>ingredients: {recipe.ingredientLines}</div>
-                <div>health labels: {recipe.healthLabels}</div>
+                <div>health labels: {recipe.healthLabels.join(', ')}</div>
                 <div>c02e: {recipe.co2EmissionsClass}</div>
               </section>
             </section>

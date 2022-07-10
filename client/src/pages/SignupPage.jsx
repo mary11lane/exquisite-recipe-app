@@ -17,10 +17,9 @@ const SignupPage = () => {
 
   const changeHandler = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
-    console.log(values);
   };
 
-  const generateErrMessage = (error) =>
+  const errorHandler = (error) =>
     toast.error(error, {
       position: 'bottom-center',
       hideProgressBar: true,
@@ -38,19 +37,16 @@ const SignupPage = () => {
         },
         { withCredentials: true }
       );
-      console.log(data);
       if (data) {
         if (data.errors) {
           const { email, password } = data.errors;
-          if (email) generateErrMessage(email);
-          else if (password) generateErrMessage(password);
+          if (email) errorHandler(email);
+          else if (password) errorHandler(password);
         } else {
           navigate('/recipes');
         }
       }
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   return (
