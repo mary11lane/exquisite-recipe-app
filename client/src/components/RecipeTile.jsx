@@ -15,7 +15,7 @@ const RecipeTile = ({ item }) => {
   return (
     <main key={uniqueId} className={styles.tileRecipe}>
       <Link to={`/recipes/${parseUri(item.recipe.uri)}`}>
-        <img src={item.recipe.image}></img>
+        <img src={item.recipe.image} className={styles.image}></img>
         <div className={styles.text}> {item.recipe.label}</div>
         <div className={styles.text}>C02e: {item.recipe.co2EmissionsClass}</div>
       </Link>

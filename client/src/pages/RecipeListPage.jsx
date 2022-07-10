@@ -11,7 +11,8 @@ const RecipeListPage = () => {
   const [input, setInput] = useState('');
   const [query, setQuery] = useState('chicken');
   const [dataFetched, setDataFetched] = useState(false);
-  const [page, setPage] = useState({});
+  const [nextpage, setNextpage] = useState({});
+  const [prevpage, setPrevpage] = useState({});
 
   useEffect(() => {
     getRecipes();
@@ -21,7 +22,7 @@ const RecipeListPage = () => {
     const { data } = await axios.get(`http://localhost:5000/api/${query}`);
     setRecipes(data.hits);
     setDataFetched(true);
-    setPage(data._links.next);
+    setNextpage(data._links.next);
     console.log('recipes', recipes);
     console.log('data', data);
   };
@@ -37,10 +38,18 @@ const RecipeListPage = () => {
     console.log('input', input);
   };
 
-  const nextPage = async () => {
-    const { data } = await axios.get(page.href);
+  const nextpageHandler = async () => {
+    const { data } = await axios.get(nextpage.href);
     setRecipes(data.hits);
-    setPage(data._links.next);
+    setNextpage(data._links.next);
+    setPrevpage(nextpage.href);
+    console.log('prevpage', prevpage);
+    setDataFetched(true);
+  };
+
+  const prevpageHandler = async () => {
+    const { data } = await axios.get(prevpage);
+    setRecipes(data.hits);
     setDataFetched(true);
   };
 
@@ -70,9 +79,13 @@ const RecipeListPage = () => {
         </section>
       )}
       <section className={styles.pagination}>
-        <div className={styles.next} onClick={nextPage}>
-          Next
-        </div>
+        <span className={styles.buttonPage} onClick={prevpageHandler}>
+          &#8592; Previous
+        </span>
+        &#124;
+        <span className={styles.buttonPage} onClick={nextpageHandler}>
+          Next &#8594;
+        </span>
       </section>
       <Footer />
     </main>
