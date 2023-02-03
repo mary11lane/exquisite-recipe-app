@@ -16,8 +16,7 @@ const DB_USERNAME = process.env.DB_USERNAME;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 
 connectDb(
-  `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.mp34x.mongodb.net/`,
-  'exquisite'
+  `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.mp34x.mongodb.net/exquisite`
 );
 
 app.use(logger('dev'));
