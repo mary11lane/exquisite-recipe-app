@@ -31,7 +31,6 @@ const RecipeListPage = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     setQuery(input);
-    setInput('');
   };
 
   const nextpageHandler = async () => {

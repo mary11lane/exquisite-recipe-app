@@ -17,7 +17,6 @@ const RecipeTile = ({ item }) => {
       <Link to={`/recipes/${parseUri(item.recipe.uri)}`}>
         <img src={item.recipe.image} className={styles.image}></img>
         <div className={styles.text}> {item.recipe.label}</div>
-        <div className={styles.text}>C02e: {item.recipe.co2EmissionsClass}</div>
       </Link>
     </main>
   );

@@ -10,8 +10,9 @@
 }
 
 .text {
+  padding: 10px;
   text-align: center;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 900;
   color: #000;
 }
