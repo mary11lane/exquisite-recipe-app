@@ -1,6 +1,7 @@
 .container,
 .recipeTiles {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .container {

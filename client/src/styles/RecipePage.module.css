@@ -23,6 +23,7 @@
 .containerRecipe {
   width: 400px;
   height: 500px;
+  overflow-y: auto;
   background-color: #d7b957;
 }
 
@@ -38,6 +39,7 @@
 .containerDetails {
   margin: 10px 20px;
 }
+
 .textLoader {
   color: #fff;
   margin: 20px;
@@ -47,9 +49,8 @@
 
 .containerDetails {
   flex-direction: column;
-  justify-content: center;
-  height: 100%;
 }
+
 .containerDetails div {
   margin-bottom: 10px;
 }
