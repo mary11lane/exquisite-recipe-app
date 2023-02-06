@@ -16,7 +16,8 @@ const NavBar = () => {
         navigate('/login');
       } else {
         const { data } = await axios.post(
-          'http://localhost:5000',
+          // 'http://localhost:5000',
+          '/',
           {},
           { withCredentials: true }
         );
