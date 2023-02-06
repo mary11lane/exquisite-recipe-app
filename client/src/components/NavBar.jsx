@@ -15,12 +15,7 @@ const NavBar = () => {
       if (!cookies.jwt) {
         navigate('/login');
       } else {
-        const { data } = await axios.post(
-          // 'http://localhost:5000',
-          '/',
-          {},
-          { withCredentials: true }
-        );
+        const { data } = await axios.post('/', {}, { withCredentials: true });
         if (!data.status) {
           removeCookies('jwt');
           navigate('login');
