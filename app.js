@@ -51,7 +51,7 @@ app.use(function (err, req, res, next) {
 app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/dist', 'assets'));
+  res.sendFile(path.join(__dirname, 'client/dist', 'assets'));
 });
 
 export default app;
