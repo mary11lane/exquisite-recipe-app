@@ -42,6 +42,8 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/dist', 'assets'));
 });
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(function (req, res, next) {
   res
     .status(404)
