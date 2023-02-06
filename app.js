@@ -34,7 +34,7 @@ app.use(cookieParser());
 app.use('/', authRoutes);
 app.use('/api', apiRoutes);
 
-// FOR DEPLOYMENT
+// FOR DEPLOYMENT FE BUILD
 
 app.use(express.static(path.join(__dirname, 'client/dist')));
 
@@ -42,13 +42,11 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/dist', 'assets'));
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
-
-// app.use(function (req, res, next) {
-//   res
-//     .status(404)
-//     .json({ message: "We couldn't find what you were looking for 😞" });
-// });
+app.use(function (req, res, next) {
+  res
+    .status(404)
+    .json({ message: "We couldn't find what you were looking for 😞" });
+});
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);
