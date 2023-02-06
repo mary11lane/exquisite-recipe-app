@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from '../styles/LandingPage.module.css';
+import landingImg from '../../src/assets/images/exquisite-landing-img.jpg';
 import Logo from '../components/Logo';
 import Footer from '../components/Footer';
 
@@ -9,10 +10,7 @@ const LandingPage = () => {
   return (
     <main className={styles.container}>
       <section className={styles.containerImage}>
-        <img
-          className={styles.imageLanding}
-          src="public/images/exquisite-landing-img.jpg"
-        />
+        <img className={styles.imageLanding} src={landingImg} />
       </section>
       <section className={styles.containerLogoButtons}>
         <Logo />
