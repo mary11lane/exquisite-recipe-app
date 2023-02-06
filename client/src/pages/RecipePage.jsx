@@ -16,8 +16,7 @@ const RecipePage = () => {
   }, []);
 
   const getRecipe = async () => {
-    // const { data } = await axios.get(`http://localhost:5000/api/recipes/${id}`);
-    const { data } = await axios.get(`/api/recipes/${id}`);
+    const { data } = await axios.get(`http://localhost:5000/api/recipes/${id}`);
     setRecipe(data);
     setDataFetched(true);
   };

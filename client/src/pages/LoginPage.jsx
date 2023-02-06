@@ -29,8 +29,7 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        // 'http://localhost:5000/login',
-        '/login',
+        'http://localhost:5000/login',
         {
           ...values,
         },
