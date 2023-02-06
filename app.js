@@ -46,4 +46,12 @@ app.use(function (err, req, res, next) {
   res.status(500).json(err);
 });
 
+// FOR DEPLOYMENT
+
+app.use(express.static(path.join(__dirname, 'client/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/dist', 'assets'));
+});
+
 export default app;
