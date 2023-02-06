@@ -9,10 +9,7 @@ const LandingPage = () => {
   return (
     <main className={styles.container}>
       <section className={styles.containerImage}>
-        <img
-          className={styles.imageLanding}
-          src="src/assets/images/exquisite-landing-img.jpg"
-        />
+        <img className={styles.imageLanding} src="exquisite-landing-img.jpg" />
       </section>
       <section className={styles.containerLogoButtons}>
         <Logo />
