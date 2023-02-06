@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import debugLib from 'debug';
 
-const debug = debugLib('exquisite-recipe-app:server');
+const debug = debugLib('exquisite-recipe-app');
 
 const { connect } = mongoose;
 
